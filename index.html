@@ -1,0 +1,660 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow Your Business with Google - VibeSites AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #4285F4; /* Google Blue */
+            --accent-green: #34A853; /* Google Green */
+            --light-bg: #F8F9FA;
+            --dark-text: #202124;
+            --medium-text: #5F6368;
+            --white: #ffffff;
+            --shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            --border-radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background-color: var(--white);
+            scroll-behavior: smooth;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-blue);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #3367D6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .light-bg {
+            background-color: var(--light-bg);
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 3.2em;
+            color: var(--primary-blue);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 1em;
+            color: var(--medium-text);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .button.primary {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+        }
+
+        .button.primary:hover {
+            background-color: #3367D6;
+            border-color: #3367D6;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .button.large {
+            padding: 18px 40px;
+            font-size: 1.1em;
+        }
+
+        header {
+            background-color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--dark-text);
+        }
+
+        .logo .highlight {
+            color: var(--primary-blue);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-left: 30px;
+        }
+
+        .nav-list a {
+            color: var(--dark-text);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+            left: 0;
+            background: var(--primary-blue);
+        }
+        
+        .hamburger {
+            display: none;
+            font-size: 2em;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--dark-text);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #6ab7ff 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 120px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+
+        .hero p {
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero .button.primary {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero .button.primary:hover {
+            background-color: #2e9f4c;
+            border-color: #2e9f4c;
+        }
+
+        .features h2 {
+            margin-bottom: 70px;
+            color: var(--dark-text);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card img {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            color: var(--dark-text);
+        }
+
+        .feature-card p {
+            font-size: 0.95em;
+        }
+
+        .how-it-works h2 {
+            color: var(--dark-text);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .step-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            font-size: 2em;
+            font-weight: 700;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+
+        .step-card h3 {
+            color: var(--dark-text);
+            font-size: 1.4em;
+        }
+
+        .testimonials h2 {
+            color: var(--dark-text);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: var(--dark-text);
+        }
+
+        .testimonial-card cite {
+            display: block;
+            text-align: right;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .cta-bottom {
+            text-align: center;
+        }
+
+        .cta-bottom h2 {
+            margin-bottom: 25px;
+            color: var(--dark-text);
+        }
+
+        .cta-bottom p {
+            font-size: 1.2em;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+            color: var(--medium-text);
+        }
+
+        footer {
+            background-color: var(--dark-text);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        footer p {
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            margin: 0 15px;
+            font-size: 0.9em;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+            h2 {
+                font-size: 2em;
+                margin-bottom: 40px;
+            }
+            h3 {
+                font-size: 1.4em;
+            }
+            .section-padding {
+                padding: 60px 0;
+            }
+
+            header .container {
+                flex-wrap: wrap;
+            }
+            .nav-menu {
+                display: flex;
+                align-items: center;
+                margin-left: auto;
+            }
+            .hamburger {
+                display: block;
+            }
+            .nav-list {
+                flex-direction: column;
+                width: 100%;
+                background-color: var(--white);
+                position: absolute;
+                top: 80px;
+                left: 0;
+                padding: 20px 0;
+                border-top: 1px solid var(--light-bg);
+                box-shadow: var(--shadow);
+                display: none;
+            }
+            .nav-list.active {
+                display: flex;
+            }
+            .nav-list li {
+                margin: 0;
+                text-align: center;
+                padding: 10px 0;
+            }
+            .nav-list a {
+                padding: 10px 0;
+                display: block;
+            }
+            .nav-list a::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .nav-list a:hover::after {
+                width: 50%;
+            }
+
+            .hero {
+                padding: 100px 0;
+                min-height: auto;
+            }
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .feature-grid, .steps-grid, .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-bottom p {
+                font-size: 1em;
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer-links a {
+                margin: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.8em;
+            }
+            .button.large {
+                padding: 15px 30px;
+                font-size: 1em;
+            }
+            .logo {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">VibeSites AI <span class="highlight">Google Promo</span></a>
+            <nav class="nav-menu">
+                <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-list">
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#features">Services</a></li>
+                    <li><a href="#how-it-works">How It Works</a></li>
+                    <li><a href="#cta-bottom">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="container">
+                <h1>Grow Your Business with Google</h1>
+                <p>Reach new customers, boost your online presence, and achieve your goals with Google's powerful tools.</p>
+                <a href="#cta-bottom" class="button primary large">Get Started Today</a>
+            </div>
+        </section>
+
+        <section id="features" class="features section-padding">
+            <div class="container">
+                <h2>Unlock Google's Potential</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/60/4285F4/FFFFFF?text=A" alt="Google Ads Icon">
+                        <h3>Google Ads</h3>
+                        <p>Target customers searching for your products or services and appear at the top of search results.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/60/34A853/FFFFFF?text=B" alt="Google My Business Icon">
+                        <h3>Google Business Profile</h3>
+                        <p>Attract local customers, manage your online presence, and collect reviews on Google Search and Maps.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/60/FBBC05/FFFFFF?text=C" alt="Google Analytics Icon">
+                        <h3>Google Analytics</h3>
+                        <p>Gain insights into your website traffic, user behavior, and campaign performance to optimize your strategy.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="https://via.placeholder.com/60/EA4335/FFFFFF?text=D" alt="SEO Icon">
+                        <h3>SEO & Content</h3>
+                        <p>Improve your organic ranking on Google with expert search engine optimization and compelling content strategies.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-works" class="how-it-works section-padding light-bg">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <h3>Consultation</h3>
+                        <p>We discuss your business goals, target audience, and current marketing efforts.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <h3>Strategy & Setup</h3>
+                        <p>We craft a tailored Google strategy and set up your campaigns, profiles, and analytics.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <h3>Launch & Optimize</h3>
+                        <p>Your campaigns go live! We continuously monitor, analyze, and optimize for best results.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <h3>Report & Grow</h3>
+                        <p>Receive regular performance reports and watch your business thrive with Google.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials section-padding">
+            <div class="container">
+                <h2>What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <p>"Our online visibility has skyrocketed since partnering with VibeSites AI. Google Ads were a game-changer!"</p>
+                        <cite>- Jane Doe, CEO of Local Cafe</cite>
+                    </div>
+                    <div class="testimonial-card">
+                        <p>"Finally understood our customers thanks to Google Analytics. The insights are invaluable for our growth."</p>
+                        <cite>- John Smith, Founder of Tech Startup</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta-bottom" class="cta-bottom section-padding light-bg">
+            <div class="container">
+                <h2>Ready to Grow?</h2>
+                <p>Let's harness the power of Google to elevate your business. Contact us today for a free consultation.</p>
+                <a href="mailto:info@vibesitesai.com" class="button primary large">Contact Us Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 VibeSites AI. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const navList = document.querySelector('.nav-list');
+            const navLinks = document.querySelectorAll('.nav-list a');
+
+            if (hamburger && navList) {
+                hamburger.addEventListener('click', () => {
+                    navList.classList.toggle('active');
+                });
+            }
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', (event) => {
+                    if (navList.classList.contains('active')) {
+                        navList.classList.remove('active');
+                    }
+                    const targetId = link.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        event.preventDefault();
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        window.scrollTo({
+                            top: targetElement.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            document.querySelectorAll('a[href^="#"]:not(.button)').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        window.scrollTo({
+                            top: targetElement.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            if (window.location.hash) {
+                const targetId = window.location.hash.substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    setTimeout(() => {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        window.scrollTo({
+                            top: targetElement.offsetTop - headerHeight,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+```
